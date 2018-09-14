@@ -1,0 +1,27 @@
+[
+	{
+		"id":"1",
+		"name":"sample",
+		"price":1000,
+		"category":["1","2"],
+		"maker":"sample",
+		"image":"",
+		"detail":"sample",
+		"colors":["ホワイト","ブラウン"],
+		"sizes":["S","M","L","XL"],
+		"new":"0",
+		"popular":"1"
+	},{
+		"id":"2",
+		"name":"sample",
+		"price":1000,
+		"category":["1","2"],
+		"maker":"sample",
+		"image":"",
+		"detail":"sample",
+		"colors":["ホワイト","ブラウン"],
+		"sizes":["S","M","L","XL"],
+		"new":"0",
+		"popular":"1"
+	}
+]

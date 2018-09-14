@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="lHP-CO-Y4n" customClass="ScrollSegmentedControl" customModule="ShopModa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-ud-idT">
+                    <rect key="frame" x="0.0" y="45" width="200" height="5"/>
+                    <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="hie-mO-c1a"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Asc-wM-prX">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbV-Ab-VtZ">
+                            <rect key="frame" x="0.0" y="45" width="40" height="5"/>
+                            <color key="backgroundColor" red="0.99279242749999996" green="0.54483211040000001" blue="0.3626496494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="05z-3N-qiu"/>
+                                <constraint firstAttribute="height" constant="5" id="tFA-VF-jol"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <real key="value" value="2.5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="wbV-Ab-VtZ" firstAttribute="top" secondItem="Asc-wM-prX" secondAttribute="top" constant="45" id="8qY-BU-RNB"/>
+                        <constraint firstAttribute="bottom" secondItem="wbV-Ab-VtZ" secondAttribute="bottom" id="M0j-q6-Xsn"/>
+                        <constraint firstAttribute="trailing" secondItem="wbV-Ab-VtZ" secondAttribute="trailing" priority="250" constant="160" id="blY-78-9aK"/>
+                        <constraint firstItem="wbV-Ab-VtZ" firstAttribute="leading" secondItem="Asc-wM-prX" secondAttribute="leading" id="pxM-28-mf7"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Asc-wM-prX" firstAttribute="leading" secondItem="lHP-CO-Y4n" secondAttribute="leading" id="4BM-iB-g34"/>
+                <constraint firstItem="yDp-ud-idT" firstAttribute="leading" secondItem="lHP-CO-Y4n" secondAttribute="leading" id="Tfh-rM-gea"/>
+                <constraint firstAttribute="bottom" secondItem="yDp-ud-idT" secondAttribute="bottom" id="Ynr-kt-v9V"/>
+                <constraint firstItem="Asc-wM-prX" firstAttribute="top" secondItem="lHP-CO-Y4n" secondAttribute="top" id="ZBN-hx-AtK"/>
+                <constraint firstAttribute="trailing" secondItem="yDp-ud-idT" secondAttribute="trailing" id="b1v-zy-vtf"/>
+                <constraint firstAttribute="trailing" secondItem="Asc-wM-prX" secondAttribute="trailing" id="oaJ-1a-haz"/>
+                <constraint firstAttribute="bottom" secondItem="Asc-wM-prX" secondAttribute="bottom" id="xf9-4O-wvn"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="barLeadingConstraint" destination="pxM-28-mf7" id="815-vV-TbQ"/>
+                <outlet property="barWidthConstraint" destination="05z-3N-qiu" id="hdS-Rg-31I"/>
+                <outlet property="scrollView" destination="Asc-wM-prX" id="Zrq-NP-cf7"/>
+            </connections>
+        </view>
+    </objects>
+</document>

@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
                 saveData.save()
                 self?.pop(animationType: .vertical)
             case .inputError:
-                self?.showAlert(title: "エラー", message: "入力内容が不正です", actions: [AlertAction(title: "OK")])
+                self?.showAlert(title: "エラー", message: "入力内容に誤りがあります", actions: [AlertAction(title: "OK")])
             case .networkError:
                 self?.showAlert(title: "ネットワークエラー", message: "ネットワーク設定をご確認ください", actions: [AlertAction(title: "OK")])
             case .error, .duplicated:

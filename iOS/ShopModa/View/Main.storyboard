@@ -3570,6 +3570,7 @@
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="検索ワードを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1i-GB-wKf">
                                         <rect key="frame" x="12" y="0.0" width="291" height="38"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -3834,6 +3835,7 @@
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TS7-Ax-Sg6">
                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="131.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <connections>
                                                     <action selector="onTapNewItem:" destination="rbV-WP-VHi" eventType="touchUpInside" id="gxd-JE-338"/>
                                                 </connections>
@@ -4060,6 +4062,6 @@
         <image name="popular" width="34" height="34"/>
         <image name="search" width="34" height="34"/>
         <image name="splash" width="562" height="415"/>
-        <image name="topBg" width="375" height="375"/>
+        <image name="topBg" width="300" height="300"/>
     </resources>
 </document>

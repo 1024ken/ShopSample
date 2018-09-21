@@ -1,3 +1,10 @@
+//
+//  NewsViewController.swift
+//  ShopSample
+//
+//  Created by 渡辺健一 on 2018/03/10.
+//  Copyright © 2018年 渡辺健一. All rights reserved.
+//
 
 import UIKit
 

@@ -1,3 +1,10 @@
+//
+//  String+Validate.swift
+//  ShopSample
+//
+//  Created by 渡辺健一 on 2018/02/27.
+//  Copyright © 2018年 渡辺健一. All rights reserved.
+//
 
 import Foundation
 

@@ -16,11 +16,13 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet private weak var totalCountLabel: UILabel!
     @IBOutlet private weak var totalPriceLabel: UILabel!
     
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
         ImageStorage.shared.cancelRequest(imageView: self.itemImageView)
     }
+    
     
     func configure(data: HistoryData) {
         

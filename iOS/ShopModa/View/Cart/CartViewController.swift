@@ -16,11 +16,13 @@ class CartViewController: UIViewController {
     
     fileprivate var cartDatas = [CartData]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.fetchCartData()
     }
+    
     
     private func fetchCartData() {
         
@@ -72,6 +74,7 @@ class CartViewController: UIViewController {
         self.pop(animationType: .vertical)
     }
 }
+
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate {
     

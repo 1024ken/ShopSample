@@ -15,6 +15,7 @@ class HistoryViewController: UIViewController {
     
     fileprivate var historyList = [HistoryData]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +42,7 @@ class HistoryViewController: UIViewController {
         self.pop(animationType: .horizontal)
     }
 }
+
 
 extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     

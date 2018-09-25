@@ -15,6 +15,7 @@ class HttpManager {
         HttpManager.request(url: url, method: "GET", body: nil, completion: completion)
     }
     
+    
     class func post(url: String, params: [String: String]?, completion: @escaping ((Bool, Data?) -> ())) {
         
         var paramsString = ""
@@ -29,6 +30,7 @@ class HttpManager {
         let paramsData = paramsString.data(using: .utf8)
         HttpManager.request(url: url, method: "POST", body: paramsData, completion: completion)
     }
+    
     
     class private func request(url: String, method:String, body: Data?, completion: @escaping ((Bool, Data?) -> ())) {
         

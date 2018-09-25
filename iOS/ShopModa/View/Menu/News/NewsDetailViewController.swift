@@ -19,9 +19,11 @@ class NewsDetailViewController: UIViewController {
     
     private var newsData: NewsData!
     
+    
     func set(newsData: NewsData) {
         self.newsData = newsData
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

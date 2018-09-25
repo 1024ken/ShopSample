@@ -15,11 +15,13 @@ class FavoriteNewsTableViewCell: UITableViewCell {
     @IBOutlet private weak var newsTitleLabel: UILabel!
     @IBOutlet private weak var timeLabel: UILabel!
     
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
         ImageStorage.shared.cancelRequest(imageView: self.newsImageView)
     }
+    
     
     func configure(data: NewsData) {
         

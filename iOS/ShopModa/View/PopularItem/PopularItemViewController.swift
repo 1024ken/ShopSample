@@ -19,6 +19,7 @@ class PopularItemViewController: UIViewController {
     }
 }
 
+
 extension PopularItemViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

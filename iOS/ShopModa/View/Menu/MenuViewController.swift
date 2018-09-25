@@ -19,6 +19,7 @@ class MenuViewController: UIViewController {
     @IBOutlet private weak var containerWidthConstraint: NSLayoutConstraint!
     @IBOutlet private weak var closeButtonWidthConstraint: NSLayoutConstraint!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +35,7 @@ class MenuViewController: UIViewController {
         self.containerWidthConstraint.constant = UIScreen.main.bounds.size.width - self.closeButtonWidthConstraint.constant
         self.closeButtonWidthConstraint.constant = UIScreen.main.bounds.size.width
     }
+    
     
     private func setLoginState() {
         
@@ -51,6 +53,7 @@ class MenuViewController: UIViewController {
         self.historyButton.backgroundColor = isLoggedIn ? .clear : .disableMenu
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -59,6 +62,7 @@ class MenuViewController: UIViewController {
             self?.view.layoutIfNeeded()
         }
     }
+    
     
     @IBAction func onTapNews(_ sender: Any) {
         let newsViewController = self.viewController(identifier: "NewsViewController")
@@ -116,6 +120,7 @@ class MenuViewController: UIViewController {
     @IBAction func onTapBackground(_ sender: Any) {
         self.close()
     }
+    
     
     private func stackOnParent(_ viewController: UIViewController) {
         self.parent?.stack(viewController: viewController, animationType: .none)

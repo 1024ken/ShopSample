@@ -16,6 +16,7 @@ class CreditCardEditViewController: TextFieldRespondableViewController {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var saveButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +38,7 @@ class CreditCardEditViewController: TextFieldRespondableViewController {
         }
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -44,6 +46,7 @@ class CreditCardEditViewController: TextFieldRespondableViewController {
             self.saveButton.setTitle("注文を確定する", for: .normal)
         }
     }
+    
     
     override func textFieldDidChange() {
         
@@ -120,6 +123,7 @@ class CreditCardEditViewController: TextFieldRespondableViewController {
         }
     }
     
+    
     private func inputData() -> CreditCardData? {
         
         guard let number = self.numberTextField.text?.replacingOccurrences(of: " ", with: ""),
@@ -148,6 +152,7 @@ class CreditCardEditViewController: TextFieldRespondableViewController {
         return CreditCardData(number: number, expire: expire, cvc: cvc, name: name)
     }
     
+    
     private func purchase() {
         CartRequester.purchase(userId: SaveData.shared.userId) { [weak self] result in
             let completeViewController = self?.viewController(identifier: "CompleteViewController") as! CompleteViewController
@@ -155,11 +160,13 @@ class CreditCardEditViewController: TextFieldRespondableViewController {
         }
     }
     
+    
     private func showError(_ text: String) {
         
         let action = AlertAction(title: "OK")
         self.showAlert(title: "エラー", message: text, actions: [action])
     }
+    
     
     @IBAction func onTapBack(_ sender: Any) {
         self.pop(animationType: .horizontal)

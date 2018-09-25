@@ -16,6 +16,7 @@ class SearchViewController: TextFieldRespondableViewController {
     
     fileprivate var itemDatas = [ItemData]()
     
+    
     override func textFieldDidChange() {
         
         guard let searchText = self.searchTextField.text else {
@@ -26,6 +27,7 @@ class SearchViewController: TextFieldRespondableViewController {
         self.noDataView.isHidden = self.itemDatas.count > 0
     }
     
+    
     @IBAction func didEndExitOnSearchText(_ sender: Any) {
         self.view.endEditing(true)
     }
@@ -34,6 +36,7 @@ class SearchViewController: TextFieldRespondableViewController {
         self.pop(animationType: .horizontal)
     }
 }
+
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     

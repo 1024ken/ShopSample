@@ -23,9 +23,11 @@ class ItemDetailViewController: UIViewController {
     private var selectedSizeIndex = 0
     private var selectedColorIndex = 0
     
+    
     func set(itemData: ItemData) {
         self.itemData = itemData
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,7 @@ class ItemDetailViewController: UIViewController {
         self.initContents()
         self.setFavoriteState()
     }
+    
     
     private func initContents() {
         
@@ -106,6 +109,7 @@ class ItemDetailViewController: UIViewController {
             self.stack(viewController: loginViewController, animationType: .horizontal)
         }
     }
+    
     
     private func createItemInfo() -> String {
         

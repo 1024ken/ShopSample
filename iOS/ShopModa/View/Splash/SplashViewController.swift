@@ -18,12 +18,14 @@ class SplashViewController: UIViewController {
     
     private var results = Dictionary<ResultKey, Bool>()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.refresh()
     }
     
+
     private func refresh() {
         
         if self.results[.item] != true {

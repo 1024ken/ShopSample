@@ -14,6 +14,7 @@ extension String {
         return self.isEmptyMatches(pattern: "[^a-zA-Z0-9]+")
     }
     
+    
     func isAvailableEmail() -> Bool {
         
         if self.characters.count == 0 {
@@ -35,6 +36,7 @@ extension String {
         return self.isEmptyMatches(pattern: "[^a-zA-Z0-9@\\+_\\-\\.]+")
     }
     
+    
     func isAvailablePassword() -> Bool {
         
         if self.characters.count < 3 {
@@ -45,6 +47,7 @@ extension String {
         }
         return self.isEmptyMatches(pattern: "[^a-zA-Z0-9]+")
     }
+    
     
     func isAvailableName() -> Bool {
         
@@ -57,6 +60,7 @@ extension String {
         return true
     }
     
+    
     func isAvailablePostCode() -> Bool {
         
         if (self.characters.count != 7) && (self.characters.count != 8) {
@@ -64,6 +68,7 @@ extension String {
         }
         return self.isEmptyMatches(pattern: "[^0-9\\-]")
     }
+    
     
     func isAvailableAddress() -> Bool {
         
@@ -76,6 +81,7 @@ extension String {
         return true
     }
     
+    
     func isAvailablePhoneNumber() -> Bool {
         
         if self.characters.count < 11 {
@@ -84,6 +90,7 @@ extension String {
         return self.isEmptyMatches(pattern: "[^0-9\\-\\+\\(\\)]+")
     }
     
+    
     func isAvailableCreditCardNumber() -> Bool {
         
         if self.characters.count != 16 {
@@ -91,6 +98,7 @@ extension String {
         }
         return self.isEmptyMatches(pattern: "[^0-9]+")
     }
+    
     
     func isAvailableCreditCardExpire() -> Bool {
         
@@ -112,6 +120,7 @@ extension String {
         return true
     }
     
+    
     func isAvailableCreditCardCvc() -> Bool {
         
         if self.characters.count != 3 {
@@ -120,6 +129,7 @@ extension String {
         return self.isEmptyMatches(pattern: "[^0-9]+")
     }
     
+    
     func isAvailableCreditCardName() -> Bool {
         
         if self.characters.count == 0 {
@@ -127,6 +137,7 @@ extension String {
         }
         return self.isEmptyMatches(pattern: "[^a-zA-Z0-9]+", options: .allowCommentsAndWhitespace)
     }
+    
     
     private func isEmptyMatches(pattern: String, options: NSRegularExpression.Options = .caseInsensitive) -> Bool {
         

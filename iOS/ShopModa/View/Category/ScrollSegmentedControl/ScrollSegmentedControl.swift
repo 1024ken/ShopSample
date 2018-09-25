@@ -16,6 +16,7 @@ class ScrollSegmentedControl: UIView {
     
     private var action: ((Int) -> ())?
     
+    
     func set(titles: [String], action: @escaping ((Int) -> ())) {
         
         self.subviews.flatMap { $0 as? UIButton }.forEach {
@@ -49,12 +50,14 @@ class ScrollSegmentedControl: UIView {
         self.scrollView.contentSize = CGSize(width: offset, height: self.frame.size.height)
     }
     
+    
     @objc func didTap(_ button: UIButton) {
         
         self.action?(button.tag)
         
         self.didSelect(at: button.tag)
     }
+    
     
     func didSelect(at: Int) {
         

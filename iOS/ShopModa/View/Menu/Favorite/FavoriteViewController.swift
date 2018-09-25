@@ -20,6 +20,7 @@ struct FavoriteCellData {
     let data: Any?
 }
 
+
 class FavoriteViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
@@ -52,6 +53,7 @@ class FavoriteViewController: UIViewController {
         self.pop(animationType: .horizontal)
     }
 }
+
 
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     

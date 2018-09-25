@@ -19,12 +19,14 @@ class CartTableViewCell: UITableViewCell {
     
     private var didChangeNumber: ((Bool) -> ())?
     
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
         ImageStorage.shared.cancelRequest(imageView: self.itemImageView)
         self.didChangeNumber = nil
     }
+    
     
     func configure(data: CartData, didChangeNumber: @escaping ((Bool) -> ())) {
         

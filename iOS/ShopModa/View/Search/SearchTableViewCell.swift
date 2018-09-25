@@ -15,11 +15,13 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet private weak var makerLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
         ImageStorage.shared.cancelRequest(imageView: self.itemImageView)
     }
+    
     
     func configure(data: ItemData) {
         

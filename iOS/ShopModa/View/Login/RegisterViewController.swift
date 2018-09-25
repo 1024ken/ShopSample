@@ -19,6 +19,7 @@ class RegisterViewController: TextFieldRespondableViewController {
     @IBOutlet private weak var containerVerticalConstraint: NSLayoutConstraint!
     @IBOutlet private weak var containerHeightConstraint: NSLayoutConstraint!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +27,7 @@ class RegisterViewController: TextFieldRespondableViewController {
         
         self.containerVerticalConstraint.constant = UIScreen.main.bounds.size.height / 2 + self.containerHeightConstraint.constant / 2
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -40,6 +42,7 @@ class RegisterViewController: TextFieldRespondableViewController {
                         self?.view.layoutIfNeeded()
             }, completion: nil)
     }
+    
     
     override func textFieldDidChange() {
         

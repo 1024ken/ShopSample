@@ -14,11 +14,13 @@ private struct ImageStorageData {
     let image: UIImage
 }
 
+
 private struct ImageRequestData {
     
     let url: String
     let imageView: UIImageView
 }
+
 
 class ImageStorage {
     

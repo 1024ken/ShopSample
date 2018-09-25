@@ -15,12 +15,14 @@ class PopularItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var makerLabel: UILabel!
     @IBOutlet private weak var priceLabel: UILabel!
     
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
         ImageStorage.shared.cancelRequest(imageView: self.itemImageView)
     }
     
+
     func configure(data: ItemData) {
         ImageStorage.shared.fetch(url: data.image, imageView: self.itemImageView)
         self.nameLabel.text = data.name

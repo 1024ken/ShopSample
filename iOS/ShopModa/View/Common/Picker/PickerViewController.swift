@@ -25,12 +25,14 @@ class PickerViewController: UIViewController {
     fileprivate var selectedIndex = 0
     fileprivate var completion: ((Int) -> ())?
     
+    
     func set(title: String, dataArray: [String], defaultIndex: Int, completion: ((Int) -> ())?) {
         self.pickerTitle = title
         self.dateArray = dataArray
         self.selectedIndex = defaultIndex
         self.completion = completion
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +47,7 @@ class PickerViewController: UIViewController {
         
         self.pickerTitleLabel.text = self.pickerTitle
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -75,6 +78,7 @@ class PickerViewController: UIViewController {
         }
     }
 }
+
 
 extension PickerViewController: UITableViewDataSource, UITableViewDelegate {
     

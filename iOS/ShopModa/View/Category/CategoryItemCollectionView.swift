@@ -14,11 +14,13 @@ class CategoryItemCollectionView: UIView {
     fileprivate var items = [ItemData]()
     fileprivate var callback: ((ItemData) -> ())?
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.collectionView.register(UINib(nibName: "CategoryItemCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryItemCollectionViewCell")
     }
+    
     
     func setCategory(id: String, callback: @escaping ((ItemData) -> ())) {
         self.items = ItemRequester.shared.filter(categoryId: id)
@@ -29,6 +31,7 @@ class CategoryItemCollectionView: UIView {
         self.collectionView.reloadData()
     }
 }
+
 
 extension CategoryItemCollectionView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     

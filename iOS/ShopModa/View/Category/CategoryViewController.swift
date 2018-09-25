@@ -16,6 +16,7 @@ class CategoryViewController: UIViewController {
     fileprivate var selectedCategoryIndex = Int(0)
     fileprivate weak var scrollSegmentedControl: ScrollSegmentedControl!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +32,7 @@ class CategoryViewController: UIViewController {
         self.scrollSegmentedControl = scrollSegmentedControl
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -39,6 +41,7 @@ class CategoryViewController: UIViewController {
         }
     }
     
+
     private func initItems() {
         
         self.scrollView.subviews.forEach {
@@ -70,6 +73,7 @@ class CategoryViewController: UIViewController {
         self.pop(animationType: .horizontal)
     }
 }
+
 
 extension CategoryViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
@@ -107,6 +111,7 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewDele
         self.scrollView.setContentOffset(offset, animated: true)
     }
 }
+
 
 extension CategoryViewController: UIScrollViewDelegate {
     

@@ -8,6 +8,7 @@
 
 import Foundation
 
+//クレジットカード情報を定義
 struct CreditCardData {
     let number: String
     let expire: String
@@ -31,6 +32,7 @@ struct CreditCardData {
 
 class CreditCardRequester {
     
+    //クレジットカード情報を取得するためのAPIを呼び出す
     class func fetch(userId: String, completion: @escaping ((Bool, CreditCardData?) -> ())) {
         
         let params = [
@@ -46,6 +48,7 @@ class CreditCardRequester {
         }
     }
     
+    //クレジットカード情報を更新するためのAPIを呼び出す
     class func set(userId: String, creditCardData: CreditCardData, completion: @escaping ((Bool) -> ())) {
         
         let params = [

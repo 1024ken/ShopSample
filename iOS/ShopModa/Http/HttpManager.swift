@@ -10,12 +10,13 @@ import Foundation
 
 class HttpManager {
     
+    //getメソッドの定義
     class func get(url: String, completion: @escaping ((Bool, Data?) -> ())) {
         
         HttpManager.request(url: url, method: "GET", body: nil, completion: completion)
     }
     
-    
+    //postメソッドの定義
     class func post(url: String, params: [String: String]?, completion: @escaping ((Bool, Data?) -> ())) {
         
         var paramsString = ""
@@ -31,7 +32,7 @@ class HttpManager {
         HttpManager.request(url: url, method: "POST", body: paramsData, completion: completion)
     }
     
-    
+    //リクエストする情報の定義
     class private func request(url: String, method:String, body: Data?, completion: @escaping ((Bool, Data?) -> ())) {
         
         guard let urlRaw = URL(string: url) else {

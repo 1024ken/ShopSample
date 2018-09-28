@@ -8,6 +8,7 @@
 
 import Foundation
 
+//ニュースデータを定義
 struct NewsData {
     
     let id: String
@@ -31,6 +32,7 @@ struct NewsData {
     }
 }
 
+//ニュース情報を取得するためのAPIを呼び出す
 class NewsRequester {
     
     static let shared = NewsRequester()

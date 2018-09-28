@@ -8,6 +8,7 @@
 
 import Foundation
 
+//お届け先情報を定義
 struct UserInformationData {
     let name: String
     let kana: String
@@ -34,6 +35,7 @@ struct UserInformationData {
 
 class UserInformationRequester {
     
+    //お届け先情報を取得するためのAPIを呼び出す
     class func fetch(userId: String, completion: @escaping ((Bool, UserInformationData?) -> ())) {
         
         let params = [
@@ -49,6 +51,7 @@ class UserInformationRequester {
         }
     }
     
+    //お届け先情報を更新するためのAPIを呼び出す
     class func set(userId: String, userInformationData: UserInformationData, completion: @escaping ((Bool) -> ())) {
         
         let params = [

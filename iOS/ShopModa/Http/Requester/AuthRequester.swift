@@ -10,6 +10,7 @@ import Foundation
 
 class AuthRequester {
     
+    //認証情報を定義
     enum Result: String {
         case ok = "0"
         case duplicated = "1"
@@ -22,14 +23,17 @@ class AuthRequester {
         }
     }
     
+    //会員登録を定義
     class func register(email: String, password: String, completion: @escaping ((Result, String?) -> ())) {
         AuthRequester.post(command: "register", email: email, password: password, completion: completion)
     }
     
+    //ログインAPIを定義
     class func login(email: String, password: String, completion: @escaping ((Result, String?) -> ())) {
         AuthRequester.post(command: "login", email: email, password: password, completion: completion)
     }
     
+    //postメソッドの定義
     private class func post(command: String, email: String, password: String, completion: @escaping ((Result, String?) -> ())) {
         
         let params = [

@@ -8,6 +8,7 @@
 
 import Foundation
 
+//カートデータを定義
 struct CartData {
     
     let itemId: String
@@ -38,6 +39,7 @@ struct CartData {
 
 class CartRequester {
     
+    //カート情報を取得するためのAPIを呼び出す
     class func fetch(userId: String, completion: @escaping ((Bool, [CartData]?) -> ())) {
         
         let params = [
@@ -59,6 +61,7 @@ class CartRequester {
         }
     }
     
+    //カート情報を加えるためのAPIを呼び出す
     class func addCart(userId: String, data: CartData, completion: @escaping ((Bool) -> ())) {
         
         CartRequester.fetch(userId: userId) { result, cartData in
@@ -76,6 +79,7 @@ class CartRequester {
         }
     }
     
+    //カート情報を更新するためのAPIを呼び出す
     class func setCart(userId: String, cartDatas: [CartData], completion: @escaping ((Bool) -> ())) {
         
         let params = [
@@ -94,6 +98,7 @@ class CartRequester {
         }
     }
     
+    //カート情報を注文するためのAPIを呼び出す
     class func purchase(userId: String, completion: @escaping ((Bool) -> ())) {
         
         let params = [

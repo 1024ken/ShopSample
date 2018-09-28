@@ -8,6 +8,7 @@
 
 import Foundation
 
+//注文履歴データを定義
 struct HistoryItemData {
     
     let itemId: String
@@ -24,6 +25,7 @@ struct HistoryItemData {
     }
 }
 
+//履歴データを定義
 struct HistoryData {
     
     let id: String
@@ -45,6 +47,7 @@ struct HistoryData {
 
 class HistoryRequester {
     
+    //注文履歴を取得するためのAPIを呼び出す
     class func fetch(userId: String, completion: @escaping ((Bool, [HistoryData]?) -> ())) {
         
         let params = [

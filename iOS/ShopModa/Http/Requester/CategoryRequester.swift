@@ -8,6 +8,7 @@
 
 import Foundation
 
+//カテゴリーデータを定義
 struct CategoryData {
     
     let id: String
@@ -29,6 +30,7 @@ class CategoryRequester {
     
     var dataList = [CategoryData]()
     
+    //カテゴリー情報を保存するためのAPIを呼び出す
     func fetch(completion: @escaping ((Bool) -> ())) {
         
         self.dataList.removeAll()

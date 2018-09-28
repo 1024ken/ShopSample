@@ -10,8 +10,10 @@ import Foundation
 
 class ApiManager {
     
+    //WebサーバーとAPI通信を行う
     class func post(params: [String: String]?, completion: @escaping ((Bool, Any?) -> ())) {
         
+        //受信されたデータのJSON解析を行う
         HttpManager.post(url: Constants.ServerUrl, params: params) { result, data in
             if result, let data = data {
                 do {

@@ -8,6 +8,7 @@
 
 import Foundation
 
+//アイテム情報を定義
 struct ItemData {
     
     let id: String
@@ -50,6 +51,7 @@ class ItemRequester {
     
     var dataList = [ItemData]()
     
+    //アイテム情報を取得するためのAPIを呼び出す
     func fetch(completion: @escaping ((Bool) -> ())) {
         
         self.dataList.removeAll()

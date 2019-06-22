@@ -36,7 +36,7 @@ class CategoryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if (self.scrollView.subviews.flatMap{ $0 as? CategoryItemCollectionView }).isEmpty {
+        if (self.scrollView.subviews.compactMap{ $0 as? CategoryItemCollectionView }).isEmpty {
             self.initItems()
         }
     }

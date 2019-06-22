@@ -26,8 +26,8 @@ extension UIViewController {
     func stack(viewController: UIViewController, animationType: SceneAnimationType, completion: (() -> ())? = nil) {
         
         self.view.addSubview(viewController.view)
-        self.addChildViewController(viewController)
-        viewController.didMove(toParentViewController: self)
+        self.addChild(viewController)
+        viewController.didMove(toParent: self)
         
         if animationType == .none {
             viewController.view.frame = CGRect(origin: .zero, size: self.view.frame.size)
@@ -72,12 +72,12 @@ extension UIViewController {
     }
     
     private func pop() {
-        self.willMove(toParentViewController: nil)
+        self.willMove(toParent: nil)
         self.view.removeFromSuperview()
-        self.removeFromParentViewController()
+        self.removeFromParent()
     }
     
     func topViewController() -> TopViewController? {
-        return UIApplication.shared.keyWindow?.rootViewController?.childViewControllers.first as? TopViewController
+        return UIApplication.shared.keyWindow?.rootViewController?.children.first as? TopViewController
     }
 }

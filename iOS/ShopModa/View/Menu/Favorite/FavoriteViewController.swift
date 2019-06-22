@@ -30,18 +30,18 @@ class FavoriteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 100
         
         cellDatas.append(FavoriteCellData(type: .title, data: "Items"))
-        let favoriteItems = SaveData.shared.favoriteItemIds.flatMap { ItemRequester.shared.filter(itemId: $0) }
+        let favoriteItems = SaveData.shared.favoriteItemIds.compactMap { ItemRequester.shared.filter(itemId: $0) }
         if favoriteItems.count > 0 {
             favoriteItems.forEach { self.cellDatas.append(FavoriteCellData(type: .item, data: $0)) }
         } else {
             self.cellDatas.append(FavoriteCellData(type: .noData, data: nil))
         }
         cellDatas.append(FavoriteCellData(type: .title, data: "News"))
-        let favoriteNews = SaveData.shared.favoriteNewsIds.flatMap { NewsRequester.shared.filter(newsId: $0) }
+        let favoriteNews = SaveData.shared.favoriteNewsIds.compactMap { NewsRequester.shared.filter(newsId: $0) }
         if favoriteNews.count > 0 {
             favoriteNews.forEach { self.cellDatas.append(FavoriteCellData(type: .news, data: $0)) }
         } else {

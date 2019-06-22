@@ -32,7 +32,7 @@ class CartViewController: UIViewController {
             Loading.stop()
             
             if result, let dataList = dataList {
-                self?.cartDatas = dataList.flatMap { ItemRequester.shared.isExistItem(id: $0.itemId) ? $0 : nil }
+                self?.cartDatas = dataList.compactMap { ItemRequester.shared.isExistItem(id: $0.itemId) ? $0 : nil }
                 self?.tableView.reloadData()
                 self?.refreshTotalPrice()
                 self?.noDataView.isHidden = dataList.count > 0

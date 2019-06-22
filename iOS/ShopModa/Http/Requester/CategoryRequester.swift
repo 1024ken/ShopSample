@@ -38,7 +38,7 @@ class CategoryRequester {
         let params = ["command": "getCategory"]
         ApiManager.post(params: params) { result, data in
             if let json = data as? Array<Any> {
-                json.flatMap { $0 as? Dictionary<String, Any> }.forEach {
+                json.compactMap { $0 as? Dictionary<String, Any> }.forEach {
                     if let categoryData = CategoryData(data: $0) {
                         self.dataList.append(categoryData)
                     }

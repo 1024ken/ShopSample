@@ -41,7 +41,7 @@ struct HistoryData {
         guard let items = data["items"] as? [Dictionary<String, Any>] else {
             return nil
         }
-        self.items = items.flatMap { HistoryItemData(data: $0) }
+        self.items = items.compactMap { HistoryItemData(data: $0) }
     }
 }
 
@@ -57,7 +57,7 @@ class HistoryRequester {
         ApiManager.post(params: params) { result, data in
             if let json = data as? Array<Any> {
                 var dataList = [HistoryData]()
-                json.flatMap { $0 as? Dictionary<String, Any> }.forEach {
+                json.compactMap { $0 as? Dictionary<String, Any> }.forEach {
                     if let historyData = HistoryData(data: $0) {
                         dataList.append(historyData)
                     }

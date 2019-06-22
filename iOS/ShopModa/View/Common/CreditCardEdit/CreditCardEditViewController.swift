@@ -52,13 +52,13 @@ class CreditCardEditViewController: TextFieldRespondableViewController {
         
         if let number = self.numberTextField.text {
             var formattedNumber = number.replacingOccurrences(of: " ", with: "")
-            if formattedNumber.characters.count >= 13 {
+            if formattedNumber.count >= 13 {
                 formattedNumber.insert(" ", at: formattedNumber.index(formattedNumber.startIndex, offsetBy: 12))
             }
-            if formattedNumber.characters.count >= 9 {
+            if formattedNumber.count >= 9 {
                 formattedNumber.insert(" ", at: formattedNumber.index(formattedNumber.startIndex, offsetBy: 8))
             }
-            if formattedNumber.characters.count >= 5 {
+            if formattedNumber.count >= 5 {
                 formattedNumber.insert(" ", at: formattedNumber.index(formattedNumber.startIndex, offsetBy: 4))
             }
             self.numberTextField.text = formattedNumber
@@ -68,12 +68,12 @@ class CreditCardEditViewController: TextFieldRespondableViewController {
             if expire.isOnlyNumber() {
                 var formattedExpire = expire.replacingOccurrences(of: " ", with: "")
                 formattedExpire = formattedExpire.replacingOccurrences(of: "/", with: "")
-                if formattedExpire.characters.count >= 3 {
+                if formattedExpire.count >= 3 {
                     formattedExpire.insert(contentsOf: [" ", "/" , " "], at: formattedExpire.index(formattedExpire.startIndex, offsetBy: 2))
                     expire = formattedExpire
                 }
             }
-            if expire.characters.count >= 8 {
+            if expire.count >= 8 {
                 expire = String(expire.prefix(8))
             }
             self.expireTextField.text = expire

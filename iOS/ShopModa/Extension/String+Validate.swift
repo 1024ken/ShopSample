@@ -17,10 +17,10 @@ extension String {
     
     func isAvailableEmail() -> Bool {
         
-        if self.characters.count == 0 {
+        if self.count == 0 {
             return false
         }
-        if self.characters.count > 255 {
+        if self.count > 255 {
             return false
         }
         if !self.contains("@") {
@@ -30,7 +30,7 @@ extension String {
         if separated.count != 2 {
             return false
         }
-        if separated[0].characters.count == 0 || separated[1].characters.count == 0 {
+        if separated[0].count == 0 || separated[1].count == 0 {
             return false
         }
         return self.isEmptyMatches(pattern: "[^a-zA-Z0-9@\\+_\\-\\.]+")
@@ -39,10 +39,10 @@ extension String {
     
     func isAvailablePassword() -> Bool {
         
-        if self.characters.count < 3 {
+        if self.count < 3 {
             return false
         }
-        if self.characters.count > 255 {
+        if self.count > 255 {
             return false
         }
         return self.isEmptyMatches(pattern: "[^a-zA-Z0-9]+")
@@ -51,10 +51,10 @@ extension String {
     
     func isAvailableName() -> Bool {
         
-        if self.characters.count == 0 {
+        if self.count == 0 {
             return false
         }
-        if self.characters.count > 255 {
+        if self.count > 255 {
             return false
         }
         return true
@@ -63,7 +63,7 @@ extension String {
     
     func isAvailablePostCode() -> Bool {
         
-        if (self.characters.count != 7) && (self.characters.count != 8) {
+        if (self.count != 7) && (self.count != 8) {
             return false
         }
         return self.isEmptyMatches(pattern: "[^0-9\\-]")
@@ -72,10 +72,10 @@ extension String {
     
     func isAvailableAddress() -> Bool {
         
-        if self.characters.count == 0 {
+        if self.count == 0 {
             return false
         }
-        if self.characters.count > 255 {
+        if self.count > 255 {
             return false
         }
         return true
@@ -84,7 +84,7 @@ extension String {
     
     func isAvailablePhoneNumber() -> Bool {
         
-        if self.characters.count < 11 {
+        if self.count < 11 {
             return false
         }
         return self.isEmptyMatches(pattern: "[^0-9\\-\\+\\(\\)]+")
@@ -93,7 +93,7 @@ extension String {
     
     func isAvailableCreditCardNumber() -> Bool {
         
-        if self.characters.count != 16 {
+        if self.count != 16 {
             return false
         }
         return self.isEmptyMatches(pattern: "[^0-9]+")
@@ -123,7 +123,7 @@ extension String {
     
     func isAvailableCreditCardCvc() -> Bool {
         
-        if self.characters.count != 3 {
+        if self.count != 3 {
             return false
         }
         return self.isEmptyMatches(pattern: "[^0-9]+")
@@ -132,7 +132,7 @@ extension String {
     
     func isAvailableCreditCardName() -> Bool {
         
-        if self.characters.count == 0 {
+        if self.count == 0 {
             return false
         }
         return self.isEmptyMatches(pattern: "[^a-zA-Z0-9]+", options: .allowCommentsAndWhitespace)
@@ -145,7 +145,7 @@ extension String {
             let expression = try NSRegularExpression(pattern: pattern, options: options)
             let matches = expression.matches(in: self,
                                              options: NSRegularExpression.MatchingOptions(),
-                                             range: NSRange(location: 0, length: characters.count))
+                                             range: NSRange(location: 0, length: count))
             return matches.isEmpty
         } catch {
             print(error)

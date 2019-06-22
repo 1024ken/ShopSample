@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -3795,8 +3795,8 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBe-mK-Djw">
                                 <rect key="frame" x="0.0" y="60" width="375" height="343.5"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U9E-YL-qjg">
-                                        <rect key="frame" x="0.0" y="135" width="170" height="74"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9E-YL-qjg">
+                                        <rect key="frame" x="0.0" y="135" width="170" height="73.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="170" id="JI5-JW-sPt"/>
@@ -3814,6 +3814,7 @@
                                 <constraints>
                                     <constraint firstItem="ADv-Xn-uao" firstAttribute="leading" secondItem="YBe-mK-Djw" secondAttribute="leading" id="9hB-mJ-pa6"/>
                                     <constraint firstAttribute="trailing" secondItem="ADv-Xn-uao" secondAttribute="trailing" id="Izg-WZ-afd"/>
+                                    <constraint firstItem="U9E-YL-qjg" firstAttribute="top" secondItem="YBe-mK-Djw" secondAttribute="top" constant="135" id="X3a-BP-j5A"/>
                                     <constraint firstItem="U9E-YL-qjg" firstAttribute="centerY" secondItem="YBe-mK-Djw" secondAttribute="centerY" id="eSW-M1-QbN"/>
                                     <constraint firstItem="U9E-YL-qjg" firstAttribute="leading" secondItem="YBe-mK-Djw" secondAttribute="leading" id="nyL-Pc-95Y"/>
                                     <constraint firstItem="ADv-Xn-uao" firstAttribute="centerY" secondItem="YBe-mK-Djw" secondAttribute="centerY" id="uXv-8d-0rv"/>
@@ -4080,7 +4081,7 @@
         <image name="pickerSelected" width="20" height="20"/>
         <image name="popular" width="34" height="34"/>
         <image name="search" width="34" height="34"/>
-        <image name="search_back" width="350" height="451"/>
+        <image name="search_back" width="350" height="451.5"/>
         <image name="splash" width="600" height="400"/>
         <image name="topBg" width="300" height="300"/>
     </resources>

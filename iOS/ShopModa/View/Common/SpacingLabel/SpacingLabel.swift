@@ -36,6 +36,6 @@ class SpacingLabel: UILabel {
         paragraphStyle.minimumLineHeight = self.lineHeight
         paragraphStyle.maximumLineHeight = self.lineHeight
         paragraphStyle.alignment = self.textAlignment
-        self.attributedText = NSAttributedString(string: text, attributes: [NSAttributedStringKey.paragraphStyle: paragraphStyle])
+        self.attributedText = NSAttributedString(string: text, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
     }
 }

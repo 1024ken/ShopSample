@@ -19,7 +19,7 @@ class ScrollSegmentedControl: UIView {
     
     func set(titles: [String], action: @escaping ((Int) -> ())) {
         
-        self.subviews.flatMap { $0 as? UIButton }.forEach {
+        self.subviews.compactMap { $0 as? UIButton }.forEach {
             $0.removeFromSuperview()
         }
         self.action = action
@@ -61,11 +61,11 @@ class ScrollSegmentedControl: UIView {
     
     func didSelect(at: Int) {
         
-        self.scrollView.subviews.flatMap { $0 as? UIButton }.forEach {
+        self.scrollView.subviews.compactMap { $0 as? UIButton }.forEach {
             $0.setTitleColor(.categoryUnselected, for: .normal)
         }
         
-        if let button = (self.scrollView.subviews.filter { $0.tag == at }.flatMap { $0 as? UIButton }).first {
+        if let button = (self.scrollView.subviews.filter { $0.tag == at }.compactMap { $0 as? UIButton }).first {
             self.barLeadingConstraint.constant = button.frame.origin.x
             self.barWidthConstraint.constant = button.frame.size.width
             UIView.animate(withDuration: 0.2, animations: { [weak self] in

@@ -124,7 +124,7 @@ class MenuViewController: UIViewController {
     
     private func stackOnParent(_ viewController: UIViewController) {
         self.parent?.stack(viewController: viewController, animationType: .none)
-        self.parent?.view.bringSubview(toFront: self.view)
+        self.parent?.view.bringSubviewToFront(self.view)
         self.close()
     }
     

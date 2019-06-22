@@ -33,7 +33,7 @@ class HistoryTableViewCell: UITableViewCell {
             self.itemImageView.image = nil
         }
         
-        let itemDatas = (data.items.flatMap { ItemRequester.shared.filter(itemId: $0.itemId) })
+        let itemDatas = (data.items.compactMap { ItemRequester.shared.filter(itemId: $0.itemId) })
         self.itemNamesLabel.text = itemDatas.map { $0.name }.joined(separator: ", ")
         
         var totalCount = 0

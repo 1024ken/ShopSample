@@ -21,7 +21,7 @@ class HttpManager {
         
         var paramsString = ""
         params?.forEach { param in
-            if paramsString.characters.count > 0 {
+            if paramsString.count > 0 {
                 paramsString += "&"
             }
             paramsString += param.key

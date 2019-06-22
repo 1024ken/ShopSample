@@ -36,6 +36,6 @@ class SaveData {
     }
     
     func isLoggedIn() -> Bool {
-        return self.userId.characters.count > 0
+        return self.userId.count > 0
     }
 }

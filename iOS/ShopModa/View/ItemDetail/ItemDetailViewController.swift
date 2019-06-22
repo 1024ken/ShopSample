@@ -56,7 +56,7 @@ class ItemDetailViewController: UIViewController {
     private func setFavoriteState() {
         
         let saveData = SaveData.shared
-        if let _ = saveData.favoriteItemIds.index(of: self.itemData.id) {
+        if let _ = saveData.favoriteItemIds.firstIndex(of: self.itemData.id) {
             self.favoriteButton.setBackgroundImage(UIImage(named: "favoriteOn"), for: .normal)
         } else {
             self.favoriteButton.setBackgroundImage(UIImage(named: "favoriteOff"), for: .normal)
@@ -95,7 +95,7 @@ class ItemDetailViewController: UIViewController {
             let cartData = CartData(itemId: self.itemData.id, itemInfo: itemInfo, number: 1)
             CartRequester.addCart(userId: saveData.userId, data: cartData, completion: { [weak self] result in
                 if result {
-                    let childViewController = self?.topViewController()?.childViewControllers.first
+                    let childViewController = self?.topViewController()?.children.first
                     let cartViewController = self?.viewController(identifier: "CartViewController") as! CartViewController
                     self?.topViewController()?.stack(viewController: cartViewController, animationType: .vertical, completion: {
                         childViewController?.pop(animationType: .none)
@@ -133,7 +133,7 @@ class ItemDetailViewController: UIViewController {
     @IBAction func onTapFavorite(_ sender: Any) {
         
         let saveData = SaveData.shared
-        if let index = saveData.favoriteItemIds.index(of: self.itemData.id) {
+        if let index = saveData.favoriteItemIds.firstIndex(of: self.itemData.id) {
             saveData.favoriteItemIds.remove(at: index)
         } else {
             saveData.favoriteItemIds.append(self.itemData.id)

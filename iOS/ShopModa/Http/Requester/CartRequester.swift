@@ -49,7 +49,7 @@ class CartRequester {
         ApiManager.post(params: params) { result, data in
             if let json = data as? Array<Any> {
                 var dataList = [CartData]()
-                json.flatMap { $0 as? Dictionary<String, Any> }.forEach {
+                json.compactMap { $0 as? Dictionary<String, Any> }.forEach {
                     if let cartData = CartData(data: $0) {
                         dataList.append(cartData)
                     }
@@ -67,7 +67,7 @@ class CartRequester {
         CartRequester.fetch(userId: userId) { result, cartData in
             if result, let cartData = cartData {
                 var addedCartData = cartData
-                if let index = (addedCartData.index { $0.itemId == data.itemId }) {
+                if let index = (addedCartData.firstIndex { $0.itemId == data.itemId }) {
                     addedCartData[index].number += data.number
                 } else {
                     addedCartData.append(data)

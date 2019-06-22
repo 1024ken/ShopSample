@@ -59,7 +59,7 @@ class ItemRequester {
         let params = ["command": "getItem"]
         ApiManager.post(params: params) { result, data in
             if let json = data as? Array<Any> {
-                json.flatMap { $0 as? Dictionary<String, Any> }.forEach {
+                json.compactMap { $0 as? Dictionary<String, Any> }.forEach {
                     if let itemData = ItemData(data: $0) {
                         self.dataList.append(itemData)
                     }

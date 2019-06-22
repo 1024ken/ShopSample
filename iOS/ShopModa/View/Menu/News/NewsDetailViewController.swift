@@ -46,7 +46,7 @@ class NewsDetailViewController: UIViewController {
     private func setFavoriteState() {
         
         let saveData = SaveData.shared
-        if let _ = saveData.favoriteNewsIds.index(of: self.newsData.id) {
+        if let _ = saveData.favoriteNewsIds.firstIndex(of: self.newsData.id) {
             self.favoriteButton.setBackgroundImage(UIImage(named: "favoriteOn"), for: .normal)
         } else {
             self.favoriteButton.setBackgroundImage(UIImage(named: "favoriteOff"), for: .normal)
@@ -56,7 +56,7 @@ class NewsDetailViewController: UIViewController {
     @IBAction func onTapFavorite(_ sender: Any) {
         
         let saveData = SaveData.shared
-        if let index = saveData.favoriteNewsIds.index(of: self.newsData.id) {
+        if let index = saveData.favoriteNewsIds.firstIndex(of: self.newsData.id) {
             saveData.favoriteNewsIds.remove(at: index)
         } else {
             saveData.favoriteNewsIds.append(self.newsData.id)
